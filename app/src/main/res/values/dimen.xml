@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="global_margin">15dp</dimen>
+    <dimen name="main_title_size">30sp</dimen>
+    <dimen name="editText_size">20sp</dimen>
+    <dimen name="checkBox_text_size">20sp</dimen>
+    <dimen name="main_title_margin">5dp</dimen>
+    <dimen name="game_score_size">80sp</dimen>
+    <dimen name="game_button_margin">80dp</dimen>
+    <dimen name="game_margin_landscape">5dp</dimen>
+    <dimen name="game_joueur_text_size">20sp</dimen>
+    <dimen name="game_countdown_width">20dp</dimen>
+    <dimen name="settings_ident">40dp</dimen>
+</resources>

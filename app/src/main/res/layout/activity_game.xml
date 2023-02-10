@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".GameActivity">
+
+    <TextView
+        android:id="@+id/game_joueur1_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/global_margin"
+        android:text="@string/main_joueur1_tv"
+        android:textSize="@dimen/game_joueur_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/game_joueur2_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/global_margin"
+        android:rotation="180"
+        android:text="@string/main_joueur2_tv"
+        android:textSize="@dimen/game_joueur_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/game_score_joueur1_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/global_margin"
+        android:layout_marginStart="16dp"
+        android:paddingVertical="@dimen/global_margin"
+        android:text="0"
+        android:textSize="@dimen/game_score_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/game_score_joueur2_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/global_margin"
+        android:paddingVertical="@dimen/global_margin"
+        android:rotation="180"
+        android:text="0"
+        android:textSize="@dimen/game_score_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/game_joueur2_bt"
+        style="@style/Widget.QuestionQuiz.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/game_button_margin"
+        app:layout_constraintEnd_toStartOf="@+id/game_score_joueur2_tv"
+        app:layout_constraintStart_toEndOf="@+id/game_score_joueur1_tv"
+        app:layout_constraintTop_toBottomOf="@+id/game_joueur1_tv" />
+
+    <TextView
+        android:id="@+id/game_question_joueur2_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/global_margin"
+        android:paddingVertical="@dimen/global_margin"
+        android:rotation="180"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_joueur2_bt" />
+
+    <TextView
+        android:id="@+id/game_question_joueur1_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/global_margin"
+        android:paddingVertical="@dimen/global_margin"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/game_joueur1_bt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/game_joueur1_bt"
+        style="@style/Widget.QuestionQuiz.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/game_button_margin"
+        android:enabled="false"
+        app:layout_constraintBottom_toTopOf="@+id/game_joueur2_tv"
+        app:layout_constraintEnd_toStartOf="@+id/game_score_joueur2_tv"
+        app:layout_constraintStart_toEndOf="@+id/game_score_joueur1_tv" />
+
+    <LinearLayout
+        android:id="@+id/game_menu_buttons_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/game_menu_bt"
+            style="@style/Widget.QuestionQuiz.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/global_margin"
+            android:text="@string/game_menu_bt" />
+
+        <Button
+            android:id="@+id/game_rejouer_bt"
+            style="@style/Widget.QuestionQuiz.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/global_margin"
+            android:text="@string/game_replay_bt" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/game_countdown_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7"
+        android:textSize="@dimen/game_score_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

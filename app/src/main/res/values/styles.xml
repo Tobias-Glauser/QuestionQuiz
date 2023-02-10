@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.QuestionQuiz.Appbar" parent="Widget.MaterialComponents.AppBarLayout.Primary">
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="Widget.QuestionQuiz.TextInputLayout.Joueurs" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="hintTextAppearance">@style/Text.QuestionQuiz.TextInputLayout.HintText</item>
+        <item name="hintTextColor">@color/colorAccent</item>
+        <item name="boxStrokeColor">@color/colorAccent</item>
+    </style>
+
+    <style name="Text.QuestionQuiz.TextInputLayout.HintText" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="Widget.QuestionQuiz.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/btn_bg_selector_disabled</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+
+    <style name="Widget.QuestionQuiz.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="Widget.QuestionQuiz.TextView.ActivityTitle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">@dimen/main_title_margin</item>
+        <item name="android:textSize">@dimen/main_title_size</item>
+    </style>
+
+    <style name="Widget.QuestionQuiz.TextView.SettingName" parent="Widget.MaterialComponents.TextView">
+
+    </style>
+
+</resources>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        style="@style/Widget.QuestionQuiz.Appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        style="@style/Widget.QuestionQuiz.TextView.ActivityTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/main_title" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/global_margin"
+        android:paddingVertical="@dimen/game_margin_landscape"
+        android:text="@string/main_joueur1_tv" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/main_joueur1_layout"
+        style="@style/Widget.QuestionQuiz.TextInputLayout.Joueurs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/global_margin"
+        android:layout_marginBottom="@dimen/game_margin_landscape"
+        android:hint="@string/main_joueur1_label">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/main_joueur1_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:textSize="@dimen/editText_size" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/global_margin"
+        android:paddingVertical="@dimen/game_margin_landscape"
+        android:text="@string/main_joueur2_tv" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/main_joueur2_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/global_margin"
+        android:layout_marginBottom="@dimen/game_margin_landscape"
+        android:hint="@string/main_joueur2_label">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/main_joueur2_et"
+            style="@style/Widget.QuestionQuiz.TextInputLayout.Joueurs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:textSize="@dimen/editText_size" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/main_start_bt"
+        style="@style/Widget.QuestionQuiz.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/global_margin"
+        android:text="@string/main_start_bt" />
+
+</LinearLayout>
