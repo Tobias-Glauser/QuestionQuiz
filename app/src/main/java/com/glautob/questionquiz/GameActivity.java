@@ -157,8 +157,7 @@ public class GameActivity extends AppCompatActivity {
                     // exécute le code de fin de partie
                     setJoueurButtonsEnable(false);
                     Layout_MenuButtons.setVisibility(View.VISIBLE);
-                    TV_Question_Joueur2.setText(R.string.game_fin_jeu);
-                    TV_Question_Joueur1.setText(R.string.game_fin_jeu);
+                    setWinner();
                     handler.removeCallbacks(this);
                 } else {
                     // code pour demander et afficher une question
@@ -255,6 +254,24 @@ public class GameActivity extends AppCompatActivity {
         SharedPreferences sharedPref = getSharedPreferences(this.getPackageName() + "_preferences", Context.MODE_PRIVATE);
         // Récupération de la vitesse des questions
         questionSpeed = sharedPref.getInt("questionSpeed", 2000);
+    }
+
+    /**
+     * Détermine le gagnant et l'affiche
+     */
+    private void setWinner() {
+        int ptsJoueur1 = Integer.parseInt(TV_PointsJoueur1.getText().toString());
+        int ptsJoueur2 = Integer.parseInt(TV_PointsJoueur2.getText().toString());
+        String result = "";
+        if (ptsJoueur1 > ptsJoueur2) {
+            result = TV_Joueur1.getText().toString() + getString(R.string.game_msg_winner);
+        } else if (ptsJoueur1 < ptsJoueur2) {
+            result = TV_Joueur2.getText().toString() + getString(R.string.game_msg_winner);
+        } else {
+            result = getString(R.string.game_msg_equality);
+        }
+        TV_Question_Joueur2.setText(result);
+        TV_Question_Joueur1.setText(result);
     }
 
 }

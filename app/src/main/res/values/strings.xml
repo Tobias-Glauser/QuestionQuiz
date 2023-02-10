@@ -24,4 +24,6 @@
     <string name="settings_add_question_answer">Vrai</string>
     <string name="settings_add_question_bt">Ajouter la question</string>
     <string name="settins_close">Fermer</string>
+    <string name="game_msg_winner">\" a gagné !\"</string>
+    <string name="game_msg_equality">Egalité !</string>
 </resources>
