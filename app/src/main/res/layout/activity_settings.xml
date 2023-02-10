@@ -91,7 +91,7 @@
 
             <Button
                 android:id="@+id/settings_add_question_bt"
-                style="@style/Widget.QuestionQuiz.Button.TextButton"
+                style="@style/Widget.QuestionQuiz.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"

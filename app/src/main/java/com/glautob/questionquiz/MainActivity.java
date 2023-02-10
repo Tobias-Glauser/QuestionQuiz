@@ -29,10 +29,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar mainToolBar = findViewById(R.id.main_toolbar);
         setSupportActionBar(mainToolBar);
 
-        ET_Joueur1 = findViewById(R.id.main_joueur1_et);
-        ET_Joueur2 = findViewById(R.id.main_joueur2_et);
-        BT_Start = findViewById(R.id.main_start_bt);
-
+        getGraphicalItems();
     }
 
     @Override
@@ -47,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             }
 
+            /**
+             * Lors de la modification du texte
+             * Vérifie les données de l'utilisateur pour activer le bouton de démarrage
+             * Active le deuxième champ de texte si le premier est rempli
+             */
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 checkUserData();
@@ -63,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             }
 
+            /**
+             * Lors de la modification du texte
+             * Vérifie les données de l'utilisateur pour activer le bouton de démarrage
+             */
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 checkUserData();
@@ -74,6 +80,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         BT_Start.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Lors du clic sur le bouton de démarrage
+             * Lance une activité de jeu
+             * @param view Vue
+             */
             @Override
             public void onClick(View view) {
                 Intent gameActivity = new Intent(MainActivity.this, GameActivity.class);
@@ -159,5 +170,14 @@ public class MainActivity extends AppCompatActivity {
     private void setInterface() {
         BT_Start.setEnabled(false);
         ET_Joueur2.setEnabled(false);
+    }
+
+    /**
+     * Récupère les éléments graphiques
+     */
+    private void getGraphicalItems() {
+        ET_Joueur1 = findViewById(R.id.main_joueur1_et);
+        ET_Joueur2 = findViewById(R.id.main_joueur2_et);
+        BT_Start = findViewById(R.id.main_start_bt);
     }
 }

@@ -36,42 +36,33 @@ public class GameActivity extends AppCompatActivity {
     private Question actualQuestion;
     private int questionSpeed;
 
+    /**
+     * Création de la fenêtre de jeu
+     * @param savedInstanceState Instance
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        TV_Joueur1 = findViewById(R.id.game_joueur1_tv);
-        TV_Joueur2 = findViewById(R.id.game_joueur2_tv);
-        TV_PointsJoueur1 = findViewById(R.id.game_score_joueur1_tv);
-        TV_PointsJoueur2 = findViewById(R.id.game_score_joueur2_tv);
-        TV_Question_Joueur1 = findViewById(R.id.game_question_joueur1_tv);
-        TV_Question_Joueur2 = findViewById(R.id.game_question_joueur2_tv);
-        TV_Coutdown = findViewById(R.id.game_countdown_tv);
-        BT_Joueur1 = findViewById(R.id.game_joueur1_bt);
-        BT_Joueur2 = findViewById(R.id.game_joueur2_bt);
-        BT_Rejouer = findViewById(R.id.game_rejouer_bt);
-        BT_Menu = findViewById(R.id.game_menu_bt);
-        Layout_MenuButtons = findViewById(R.id.game_menu_buttons_layout);
+        getGraphicalItems();
 
-        // Affiche le nom des joueurs
-        setPlayersName();
-
-        // Récupération du questionManager
-        questionManager = new QuestionManager(this);
-
-        // https://www.tutorialspoint.com/android/android_shared_preferences.htm
-        // Récupération des préférences
-        SharedPreferences sharedPref = getSharedPreferences(this.getPackageName() + "_preferences", Context.MODE_PRIVATE);
-        // Récupération de la vitesse des questions
-        questionSpeed = sharedPref.getInt("questionSpeed", 2000);
+        initialiseActivity();
     }
 
+    /**
+     * Au lancement de la fenêtre de jeu
+     */
     @Override
     protected void onStart() {
         super.onStart();
 
         BT_Joueur1.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Au clic sur le bouton du joueur 1
+             * Désactiver les boutons et attribuer les points
+             * @param view Vue
+             */
             @Override
             public void onClick(View view) {
                 setJoueurButtonsEnable(false);
@@ -84,6 +75,11 @@ public class GameActivity extends AppCompatActivity {
         });
 
         BT_Joueur2.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Au clic sur le bouton du joueur 2
+             * Désactiver les boutons et attribuer les points
+             * @param view Vue
+             */
             @Override
             public void onClick(View view) {
                 setJoueurButtonsEnable(false);
@@ -96,6 +92,11 @@ public class GameActivity extends AppCompatActivity {
         });
 
         BT_Menu.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Au clic sur le bouton menu
+             * Fermer la fenêtre de jeu
+             * @param view Vue
+             */
             @Override
             public void onClick(View view) {
                 finish();
@@ -103,12 +104,18 @@ public class GameActivity extends AppCompatActivity {
         });
 
         BT_Rejouer.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Au clic sur le bouton rejouer
+             * Relancer une nouvelle partie
+             * @param view Vue
+             */
             @Override
             public void onClick(View view) {
                 startNewGame();
             }
         });
 
+        // Lancer une nouvelle partie
         startNewGame();
     }
 
@@ -216,6 +223,38 @@ public class GameActivity extends AppCompatActivity {
 
         TV_Joueur1.setText(joueur1);
         TV_Joueur2.setText(joueur2);
+    }
+
+    /**
+     * Récupère les éléments graphiques
+     */
+    private void getGraphicalItems() {
+        TV_Joueur1 = findViewById(R.id.game_joueur1_tv);
+        TV_Joueur2 = findViewById(R.id.game_joueur2_tv);
+        TV_PointsJoueur1 = findViewById(R.id.game_score_joueur1_tv);
+        TV_PointsJoueur2 = findViewById(R.id.game_score_joueur2_tv);
+        TV_Question_Joueur1 = findViewById(R.id.game_question_joueur1_tv);
+        TV_Question_Joueur2 = findViewById(R.id.game_question_joueur2_tv);
+        TV_Coutdown = findViewById(R.id.game_countdown_tv);
+        BT_Joueur1 = findViewById(R.id.game_joueur1_bt);
+        BT_Joueur2 = findViewById(R.id.game_joueur2_bt);
+        BT_Rejouer = findViewById(R.id.game_rejouer_bt);
+        BT_Menu = findViewById(R.id.game_menu_bt);
+        Layout_MenuButtons = findViewById(R.id.game_menu_buttons_layout);
+    }
+
+    /**
+     * Initialise l'activité
+     */
+    private void initialiseActivity() {
+        setPlayersName();
+        questionManager = new QuestionManager(this);
+
+        // https://www.tutorialspoint.com/android/android_shared_preferences.htm
+        // Récupération des préférences
+        SharedPreferences sharedPref = getSharedPreferences(this.getPackageName() + "_preferences", Context.MODE_PRIVATE);
+        // Récupération de la vitesse des questions
+        questionSpeed = sharedPref.getInt("questionSpeed", 2000);
     }
 
 }
