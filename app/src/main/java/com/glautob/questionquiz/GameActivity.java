@@ -26,7 +26,6 @@ public class GameActivity extends AppCompatActivity {
     private TextView TV_PointsJoueur2;
     private TextView TV_Question_Joueur1;
     private TextView TV_Question_Joueur2;
-    private TextView TV_Coutdown;
     private Button BT_Joueur1;
     private Button BT_Joueur2;
     private Button BT_Rejouer;
@@ -152,7 +151,6 @@ public class GameActivity extends AppCompatActivity {
         questionRunnable = new Runnable() {
             @Override
             public void run() {
-                TV_Coutdown.setVisibility(View.INVISIBLE);
                 if (!questionManager.questionsLeft()) {
                     // exécute le code de fin de partie
                     setJoueurButtonsEnable(false);
@@ -177,12 +175,15 @@ public class GameActivity extends AppCompatActivity {
         new CountDownTimer(6000, 1000) {
             public void onTick(long millisUntilFinished) {
                 // Afficher le compteur à l'utilisateur
-                TV_Coutdown.setText(Long.toString(millisUntilFinished / 1000 + 1));
+                String timeLeft = Long.toString(millisUntilFinished / 1000 + 1);
+                TV_Question_Joueur1.setText(timeLeft);
+                TV_Question_Joueur2.setText(timeLeft);
             }
 
             public void onFinish() {
                 // Afficher le départ à l'utilisateur
-                TV_Coutdown.setText(R.string.game_lancement_jeu);
+                TV_Question_Joueur1.setText(R.string.game_lancement_jeu);
+                TV_Question_Joueur2.setText(R.string.game_lancement_jeu);
                 startQuestionIterative();
             }
         }.start();
@@ -207,7 +208,6 @@ public class GameActivity extends AppCompatActivity {
         TV_Question_Joueur2.setText("");
 //        TV_Coutdown.setText("7");
         Layout_MenuButtons.setVisibility(View.INVISIBLE);
-        TV_Coutdown.setVisibility(View.VISIBLE);
         setJoueurButtonsEnable(false);
     }
 
@@ -234,7 +234,6 @@ public class GameActivity extends AppCompatActivity {
         TV_PointsJoueur2 = findViewById(R.id.game_score_joueur2_tv);
         TV_Question_Joueur1 = findViewById(R.id.game_question_joueur1_tv);
         TV_Question_Joueur2 = findViewById(R.id.game_question_joueur2_tv);
-        TV_Coutdown = findViewById(R.id.game_countdown_tv);
         BT_Joueur1 = findViewById(R.id.game_joueur1_bt);
         BT_Joueur2 = findViewById(R.id.game_joueur2_bt);
         BT_Rejouer = findViewById(R.id.game_rejouer_bt);

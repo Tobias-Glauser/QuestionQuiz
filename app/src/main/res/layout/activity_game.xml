@@ -93,7 +93,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/game_button_margin"
-        android:enabled="false"
         app:layout_constraintBottom_toTopOf="@+id/game_joueur2_tv"
         app:layout_constraintEnd_toStartOf="@+id/game_score_joueur2_tv"
         app:layout_constraintStart_toEndOf="@+id/game_score_joueur1_tv" />
@@ -125,16 +124,6 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/game_countdown_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="7"
-        android:textSize="@dimen/game_score_size"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
