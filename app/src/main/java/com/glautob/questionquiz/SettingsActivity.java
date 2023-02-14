@@ -15,6 +15,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -125,6 +126,9 @@ public class SettingsActivity extends AppCompatActivity {
                     // Réinitialise les champs
                     ET_Question.setText("");
                     CB_Response.setChecked(false);
+
+                    // informe l'utilisateur de l'ajout de la question
+                    Toast.makeText(SettingsActivity.this, "Question ajoutée", Toast.LENGTH_SHORT).show();
                 }
             }
         });

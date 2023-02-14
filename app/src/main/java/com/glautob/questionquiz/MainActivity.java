@@ -22,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
     private EditText ET_Joueur2;
     private Button BT_Start;
 
+    /**
+     * Lors de la création de la fenêtre principale
+     * @param savedInstanceState Instance
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
         getGraphicalItems();
     }
 
+    /**
+     * Au démarrage de la fenêtre
+     */
     @Override
     protected void onStart() {
         super.onStart();
