@@ -83,7 +83,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="@dimen/main_layout_margin">
 
         <Button
             android:id="@+id/main_start_bt"
@@ -92,8 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="28dp"
-            android:layout_marginBottom="278dp"
+            android:layout_marginEnd="@dimen/main_start_margin"
             android:text="@string/main_start_bt" />
 
     </RelativeLayout>

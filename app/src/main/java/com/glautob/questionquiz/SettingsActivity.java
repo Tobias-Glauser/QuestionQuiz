@@ -121,7 +121,7 @@ public class SettingsActivity extends AppCompatActivity {
                     // Ajoute la question à la DB
                     Question question = new Question(ET_Question.getText().toString(), CB_Response.isChecked() ? 1 : 0);
                     QuestionManager questionManager = new QuestionManager(SettingsActivity.this);
-                    questionManager.addQuestion(question, SettingsActivity.this);
+                    questionManager.addQuestionInDB(question, SettingsActivity.this);
 
                     // Réinitialise les champs
                     ET_Question.setText("");

@@ -119,7 +119,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Création du menu
-     *
      * @param menu le menu à créer
      * @return true
      */
@@ -131,7 +130,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Gère les actions à effectuer lors du clic sur un item du menu
-     *
      * @param item l'item du menu sur lequel on a cliqué
      * @return true si l'action a été traitée, false sinon
      */

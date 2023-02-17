@@ -14,7 +14,7 @@
     <string name="main_start_bt">Start</string>
     <string name="game_lancement_jeu">Partez !</string>
     <string name="game_fin_jeu">Fin de la partie</string>
-    <string name="about_presentation_text">Application créée dans le cadre de l\'atelier 33 android \nAuteur : Tobias Glauser \nVersion : </string>
+    <string name="about_presentation_text">"Application créée dans le cadre de l\'atelier 33 android \nAuteur : Tobias Glauser \nVersion : "</string>
     <string name="about_validation">OK</string>
     <string name="about_title">A propos de l\'application</string>
     <string name="settings_title_text">Paramètres</string>
@@ -24,6 +24,7 @@
     <string name="settings_add_question_answer">Vrai</string>
     <string name="settings_add_question_bt">Ajouter la question</string>
     <string name="settins_close">Fermer</string>
-    <string name="game_msg_winner">\" a gagné !\"</string>
+    <string name="game_msg_winner">" a gagné !"</string>
     <string name="game_msg_equality">Egalité !</string>
+    <string name="game_0_score">0</string>
 </resources>

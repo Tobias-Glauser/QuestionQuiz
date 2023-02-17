@@ -12,27 +12,17 @@ import java.util.ArrayList;
 
 public class QuestionManager {
     private ArrayList<Question> questionsList = new ArrayList<>();
-//    private static int currentQuestionIndex;
 
     /**
      * Constructeur de la classe QuestionManager
-     *
      * @param context contexte de l'application
      */
     public QuestionManager(Context context) {
         questionsList = initQuestionList(context);
     }
 
-//    /**
-//     * Constructeur de la classe QuestionManager
-//     */
-//    public Question getQuestion() {
-//        return questionsList.get(currentQuestionIndex);
-//    }
-
     /**
-     * Passe à la question suivante
-     *
+     * Passe à la question suivante et la supprime de la liste
      * @return la question suivante
      */
     public Question getNextQuestion() {
@@ -44,44 +34,22 @@ public class QuestionManager {
 
     /**
      * Dit s'il reste des questions dans la liste
-     *
      * @return true s'il reste des questions, false sinon
      */
     public boolean questionsLeft() {
         return questionsList.size() > 0;
     }
 
-    public void addQuestion(Question question, Context context) {
-        addQuestionInDB(question, context);
-    }
-
     /**
-     * Initialise une nouvelle liste de questions
-     *
+     * Crée la liste des questions
      * @param context le contexte de l'application
      */
     public void newQuestionList(Context context) {
         questionsList = initQuestionList(context);
     }
 
-//    /**
-//     * Initialise la liste des questions
-//     */
-//    public void initQuestList() {
-//        currentQuestionIndex = -1;
-//        questionsList.clear();
-//        questionsList.add(new Question("La terre est plate", 0));
-//        questionsList.add(new Question("Le soleil tourne autour de la terre", 0));
-//        questionsList.add(new Question("La neige est rose", 0));
-//        questionsList.add(new Question("L'homme a marché sur la lune", 1));
-//        questionsList.add(new Question("La France est un pays d'Europe", 1));
-//        questionsList.add(new Question("Le Canada est un pays d'Amérique du Nord", 1));
-//        questionsList.add(new Question("Les chiens sont des herbivores", 0));
-//    }
-
     /**
      * Initialise la liste des questions
-     *
      * @param context le contexte de l'application
      * @return la liste des questions
      */
@@ -104,7 +72,6 @@ public class QuestionManager {
 
     /**
      * Ajoute une question dans la base de données
-     *
      * @param question la question à ajouter
      * @param context  contexte de l'application
      */
@@ -122,8 +89,7 @@ public class QuestionManager {
     }
 
     /**
-     * Rcéupère la valeur du plus grand id de la table quiz
-     *
+     * Récupère la valeur du plus grand id de la table quiz
      * @param context contexte de l'application
      * @return la valeur du plus grand id de la table quiz
      */

@@ -133,13 +133,8 @@ public class GameActivity extends AppCompatActivity {
      * @param enable true pour activer, false pour désactiver
      */
     private void setJoueurButtonsEnable(boolean enable) {
-        if (enable) {
-            BT_Joueur1.setEnabled(true);
-            BT_Joueur2.setEnabled(true);
-        } else {
-            BT_Joueur1.setEnabled(false);
-            BT_Joueur2.setEnabled(false);
-        }
+        BT_Joueur1.setEnabled(enable);
+        BT_Joueur2.setEnabled(enable);
     }
 
     /**
@@ -149,6 +144,11 @@ public class GameActivity extends AppCompatActivity {
         handler = new Handler();
 
         questionRunnable = new Runnable() {
+            /**
+             * Itérateur de questions
+             * s'il reste des questions, affiche la question suivante
+             * sinon stop le jeux et affiche le résultat et le menu
+             */
             @Override
             public void run() {
                 if (!questionManager.questionsLeft()) {
@@ -173,6 +173,11 @@ public class GameActivity extends AppCompatActivity {
      */
     private void startCountDownTimer() {
         new CountDownTimer(6000, 1000) {
+            /**
+             * A chaque seconde du compte à rebours
+             * Affiche le temps avant le départ à l'utilisateur
+             * @param millisUntilFinished Temps restant
+             */
             public void onTick(long millisUntilFinished) {
                 // Afficher le compteur à l'utilisateur
                 String timeLeft = Long.toString(millisUntilFinished / 1000 + 1);
@@ -180,6 +185,11 @@ public class GameActivity extends AppCompatActivity {
                 TV_Question_Joueur2.setText(timeLeft);
             }
 
+            /**
+             * Au fin du compte à rebours
+             * Affiche le départ à l'utilisateur
+             * et démarre l'itérateur de questions
+             */
             public void onFinish() {
                 // Afficher le départ à l'utilisateur
                 TV_Question_Joueur1.setText(R.string.game_lancement_jeu);
@@ -206,7 +216,6 @@ public class GameActivity extends AppCompatActivity {
         TV_PointsJoueur2.setText("0");
         TV_Question_Joueur1.setText("");
         TV_Question_Joueur2.setText("");
-//        TV_Coutdown.setText("7");
         Layout_MenuButtons.setVisibility(View.INVISIBLE);
         setJoueurButtonsEnable(false);
     }
@@ -217,11 +226,8 @@ public class GameActivity extends AppCompatActivity {
     private void setPlayersName() {
         Intent gameActivity = getIntent();
 
-        String joueur1 = gameActivity.getStringExtra("nom_joueur1");
-        String joueur2 = gameActivity.getStringExtra("nom_joueur2");
-
-        TV_Joueur1.setText(joueur1);
-        TV_Joueur2.setText(joueur2);
+        TV_Joueur1.setText(gameActivity.getStringExtra("nom_joueur1"));
+        TV_Joueur2.setText(gameActivity.getStringExtra("nom_joueur2"));
     }
 
     /**
@@ -248,8 +254,8 @@ public class GameActivity extends AppCompatActivity {
         setPlayersName();
         questionManager = new QuestionManager(this);
 
-        // https://www.tutorialspoint.com/android/android_shared_preferences.htm
         // Récupération des préférences
+        // https://www.tutorialspoint.com/android/android_shared_preferences.htm
         SharedPreferences sharedPref = getSharedPreferences(this.getPackageName() + "_preferences", Context.MODE_PRIVATE);
         // Récupération de la vitesse des questions
         questionSpeed = sharedPref.getInt("questionSpeed", 2000);

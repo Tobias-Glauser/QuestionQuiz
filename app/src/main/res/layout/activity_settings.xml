@@ -28,9 +28,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/global_margin"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="@dimen/settings_title_margin_top"
             android:text="@string/settings_vitese_defilement"
-            android:textColor="@color/black"
             android:textSize="@dimen/editText_size" />
 
         <com.google.android.material.slider.Slider
@@ -52,7 +51,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/global_margin"
             android:text="@string/settings_add_question"
-            android:textColor="@color/black"
             android:textSize="@dimen/editText_size" />
 
         <LinearLayout
@@ -65,7 +63,7 @@
                 style="@style/Widget.QuestionQuiz.TextInputLayout.Joueurs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
+                android:layout_marginLeft="@dimen/setttings_double_indent_margin"
                 android:layout_marginRight="@dimen/global_margin"
                 android:layout_marginBottom="@dimen/global_margin"
                 android:hint="@string/settings_add_question_hint">

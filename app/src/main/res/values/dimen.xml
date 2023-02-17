@@ -11,4 +11,10 @@
     <dimen name="game_joueur_text_size">20sp</dimen>
     <dimen name="game_countdown_width">20dp</dimen>
     <dimen name="settings_ident">40dp</dimen>
+    <dimen name="game_score_margin">16dp</dimen>
+    <dimen name="game_question_title">30sp</dimen>
+    <dimen name="main_layout_margin">20dp</dimen>
+    <dimen name="main_start_margin">28dp</dimen>
+    <dimen name="settings_title_margin_top">30dp</dimen>
+    <dimen name="setttings_double_indent_margin">40dp</dimen>
 </resources>
